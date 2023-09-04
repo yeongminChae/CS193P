@@ -12,8 +12,8 @@
 		A38FB6AE2AA5EC7000CA1B25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A38FB6AD2AA5EC7000CA1B25 /* Assets.xcassets */; };
 		A38FB6B12AA5EC7000CA1B25 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A38FB6B02AA5EC7000CA1B25 /* Preview Assets.xcassets */; };
 		A38FB6BC2AA6174F00CA1B25 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FB6BB2AA6174F00CA1B25 /* ContentView.swift */; };
-		A38FB6BF2AA61E1600CA1B25 /* Lecture2.md in Resources */ = {isa = PBXBuildFile; fileRef = A38FB6BD2AA61E1600CA1B25 /* Lecture2.md */; };
-		A38FB6C02AA61E1600CA1B25 /* Lecture1.md in Resources */ = {isa = PBXBuildFile; fileRef = A38FB6BE2AA61E1600CA1B25 /* Lecture1.md */; };
+		A38FB6C42AA61E9E00CA1B25 /* Lecture1.md in Resources */ = {isa = PBXBuildFile; fileRef = A38FB6C22AA61E9E00CA1B25 /* Lecture1.md */; };
+		A38FB6C52AA61E9E00CA1B25 /* Lecture2.md in Resources */ = {isa = PBXBuildFile; fileRef = A38FB6C32AA61E9E00CA1B25 /* Lecture2.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,8 +23,8 @@
 		A38FB6AD2AA5EC7000CA1B25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A38FB6B02AA5EC7000CA1B25 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A38FB6BB2AA6174F00CA1B25 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		A38FB6BD2AA61E1600CA1B25 /* Lecture2.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = Lecture2.md; path = "Memorize(Recap)/LectureNote/Lecture2.md"; sourceTree = SOURCE_ROOT; };
-		A38FB6BE2AA61E1600CA1B25 /* Lecture1.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = Lecture1.md; path = "Memorize(Recap)/LectureNote/Lecture1.md"; sourceTree = SOURCE_ROOT; };
+		A38FB6C22AA61E9E00CA1B25 /* Lecture1.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Lecture1.md; sourceTree = "<group>"; };
+		A38FB6C32AA61E9E00CA1B25 /* Lecture2.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Lecture2.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +60,7 @@
 				A38FB6A92AA5EC6F00CA1B25 /* Memorize_Recap_App.swift */,
 				A38FB6BB2AA6174F00CA1B25 /* ContentView.swift */,
 				A38FB6AB2AA5EC6F00CA1B25 /* ContentView_Old.swift */,
-				A38FB6B92AA601D200CA1B25 /* LectureNote */,
+				A38FB6C12AA61E9E00CA1B25 /* LectureNote */,
 				A38FB6AD2AA5EC7000CA1B25 /* Assets.xcassets */,
 				A38FB6AF2AA5EC7000CA1B25 /* Preview Content */,
 			);
@@ -75,14 +75,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		A38FB6B92AA601D200CA1B25 /* LectureNote */ = {
+		A38FB6C12AA61E9E00CA1B25 /* LectureNote */ = {
 			isa = PBXGroup;
 			children = (
-				A38FB6BE2AA61E1600CA1B25 /* Lecture1.md */,
-				A38FB6BD2AA61E1600CA1B25 /* Lecture2.md */,
+				A38FB6C22AA61E9E00CA1B25 /* Lecture1.md */,
+				A38FB6C32AA61E9E00CA1B25 /* Lecture2.md */,
 			);
-			name = LectureNote;
-			path = "강의록";
+			path = LectureNote;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,10 +142,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A38FB6C52AA61E9E00CA1B25 /* Lecture2.md in Resources */,
 				A38FB6B12AA5EC7000CA1B25 /* Preview Assets.xcassets in Resources */,
 				A38FB6AE2AA5EC7000CA1B25 /* Assets.xcassets in Resources */,
-				A38FB6BF2AA61E1600CA1B25 /* Lecture2.md in Resources */,
-				A38FB6C02AA61E1600CA1B25 /* Lecture1.md in Resources */,
+				A38FB6C42AA61E9E00CA1B25 /* Lecture1.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
