@@ -31,6 +31,7 @@
 		A38FB6BB2AA6174F00CA1B25 /* EmojiMemoryGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGameView.swift; sourceTree = "<group>"; };
 		A38FB6C22AA61E9E00CA1B25 /* Lecture1.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Lecture1.md; sourceTree = "<group>"; };
 		A38FB6C32AA61E9E00CA1B25 /* Lecture2.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Lecture2.md; sourceTree = "<group>"; };
+		A3D43D552AA9F51000A4B44D /* Lecture5.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Lecture5.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +91,7 @@
 				A38FB6C32AA61E9E00CA1B25 /* Lecture2.md */,
 				A362A00F2AA73D7B00779E07 /* Lecture3.md */,
 				A31570BF2AA9C5C0005C1FB0 /* Lecture4.md */,
+				A3D43D552AA9F51000A4B44D /* Lecture5.md */,
 			);
 			path = LectureNote;
 			sourceTree = "<group>";
