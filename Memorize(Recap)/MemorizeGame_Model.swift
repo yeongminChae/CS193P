@@ -8,15 +8,30 @@
 import Foundation
 
 struct MemoryGame<CardContent> {
-    var cards: Array<Card>
+    private(set) var cards: Array<Card>
+    // private(set) : private과 같지만 이 변수 설정만 비공개라는 뜻입니다.
 
-    func choose(card: Card) {
-
+    init(numberOfFairsOfCards: Int, cardContentFactory: (Int) -> CardContent) {
+        cards = []
+        // add numberOfFairsOfCards * 2 cards
+        for pairIndex in 0..<max(2, numberOfFairsOfCards) { // max(2, numberOfFairsOfCards) 카드 쌍의 수가 2개 이하가 되는것을 방지하기 위한 코드
+            let content = cardContentFactory(pairIndex)
+            cards.append(Card(contents: content))
+            cards.append(Card(contents: content))
+        }
     }
 
-    struct Card { // nested struct(중첩 struct) 
-        var isFaceUp: Bool
-        var isMatched: Bool
-        var contents: CardContent
+    func choose(_ card: Card) {
+      
+    }
+
+    mutating func shuffle() { // 모델을 수정할 수 있는 모든 함수는 mutating이라고 표시되어야 합니다.
+        cards.shuffle()
+    }
+
+    struct Card {
+        var isFaceUp = false
+        var isMatched = false
+        let contents: CardContent
     }
 }

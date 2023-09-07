@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  EmojiMemoryGameView.swift
 //  Memorize(Recap)
 //
 //  Created by 채영민 on 2023/09/04.
@@ -18,7 +18,7 @@ struct ContentView_Old: View {
             HStack {
                 ForEach(0..<cardCount, id:\.self) { emoji in
                     //            ForEach(emojis.indices, id:\.self) { emoji in
-                    CardView(content: emojis[emoji])
+                    CardView_Old(content: emojis[emoji])
                 }
                 //                Old Way
                 //                CardView(content: "💀",isFaceUp: false)
@@ -90,6 +90,6 @@ struct CardView_Old: View {
 
 //struct ContentView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        ContentView()
+//        EmojiMemoryGameView()
 //    }
 //}

@@ -13,12 +13,13 @@
 		A38FB6AC2AA5EC6F00CA1B25 /* ContentView_Old.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FB6AB2AA5EC6F00CA1B25 /* ContentView_Old.swift */; };
 		A38FB6AE2AA5EC7000CA1B25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A38FB6AD2AA5EC7000CA1B25 /* Assets.xcassets */; };
 		A38FB6B12AA5EC7000CA1B25 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A38FB6B02AA5EC7000CA1B25 /* Preview Assets.xcassets */; };
-		A38FB6BC2AA6174F00CA1B25 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FB6BB2AA6174F00CA1B25 /* ContentView.swift */; };
+		A38FB6BC2AA6174F00CA1B25 /* EmojiMemoryGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FB6BB2AA6174F00CA1B25 /* EmojiMemoryGameView.swift */; };
 		A38FB6C42AA61E9E00CA1B25 /* Lecture1.md in Resources */ = {isa = PBXBuildFile; fileRef = A38FB6C22AA61E9E00CA1B25 /* Lecture1.md */; };
 		A38FB6C52AA61E9E00CA1B25 /* Lecture2.md in Resources */ = {isa = PBXBuildFile; fileRef = A38FB6C32AA61E9E00CA1B25 /* Lecture2.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A31570BF2AA9C5C0005C1FB0 /* Lecture4.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Lecture4.md; sourceTree = "<group>"; };
 		A362A00F2AA73D7B00779E07 /* Lecture3.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Lecture3.md; sourceTree = "<group>"; };
 		A362A0102AA7606B00779E07 /* MemorizeGame_Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeGame_Model.swift; sourceTree = "<group>"; };
 		A362A0122AA7615F00779E07 /* EmojiMemoryGame_ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGame_ViewModel.swift; sourceTree = "<group>"; };
@@ -27,7 +28,7 @@
 		A38FB6AB2AA5EC6F00CA1B25 /* ContentView_Old.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView_Old.swift; sourceTree = "<group>"; };
 		A38FB6AD2AA5EC7000CA1B25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A38FB6B02AA5EC7000CA1B25 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		A38FB6BB2AA6174F00CA1B25 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A38FB6BB2AA6174F00CA1B25 /* EmojiMemoryGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGameView.swift; sourceTree = "<group>"; };
 		A38FB6C22AA61E9E00CA1B25 /* Lecture1.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Lecture1.md; sourceTree = "<group>"; };
 		A38FB6C32AA61E9E00CA1B25 /* Lecture2.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Lecture2.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,7 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				A38FB6A92AA5EC6F00CA1B25 /* Memorize_Recap_App.swift */,
-				A38FB6BB2AA6174F00CA1B25 /* ContentView.swift */,
+				A38FB6BB2AA6174F00CA1B25 /* EmojiMemoryGameView.swift */,
 				A362A0102AA7606B00779E07 /* MemorizeGame_Model.swift */,
 				A362A0122AA7615F00779E07 /* EmojiMemoryGame_ViewModel.swift */,
 				A38FB6AB2AA5EC6F00CA1B25 /* ContentView_Old.swift */,
@@ -88,6 +89,7 @@
 				A38FB6C22AA61E9E00CA1B25 /* Lecture1.md */,
 				A38FB6C32AA61E9E00CA1B25 /* Lecture2.md */,
 				A362A00F2AA73D7B00779E07 /* Lecture3.md */,
+				A31570BF2AA9C5C0005C1FB0 /* Lecture4.md */,
 			);
 			path = LectureNote;
 			sourceTree = "<group>";
@@ -168,7 +170,7 @@
 				A362A0112AA7606B00779E07 /* MemorizeGame_Model.swift in Sources */,
 				A38FB6AA2AA5EC6F00CA1B25 /* Memorize_Recap_App.swift in Sources */,
 				A362A0132AA7615F00779E07 /* EmojiMemoryGame_ViewModel.swift in Sources */,
-				A38FB6BC2AA6174F00CA1B25 /* ContentView.swift in Sources */,
+				A38FB6BC2AA6174F00CA1B25 /* EmojiMemoryGameView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
