@@ -45,6 +45,7 @@
 		A3E1DE6E2AAC6FB600B30F11 /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 		A3E1DE702AACE11300B30F11 /* Lecture8.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Lecture8.md; sourceTree = "<group>"; };
 		A3E1DE712AADB85C00B30F11 /* FlyingNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyingNumber.swift; sourceTree = "<group>"; };
+		A3E1DE732AADC78000B30F11 /* Lecture9.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Lecture9.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +62,6 @@
 		A38FB69D2AA5EC6F00CA1B25 = {
 			isa = PBXGroup;
 			children = (
-				A3E1DE672AAC598700B30F11 /* AspectVGrid.swift */,
 				A38FB6A82AA5EC6F00CA1B25 /* Memorize(Recap) */,
 				A38FB6A72AA5EC6F00CA1B25 /* Products */,
 			);
@@ -78,10 +78,12 @@
 		A38FB6A82AA5EC6F00CA1B25 /* Memorize(Recap) */ = {
 			isa = PBXGroup;
 			children = (
+				A3E1DE672AAC598700B30F11 /* AspectVGrid.swift */,
 				A38FB6A92AA5EC6F00CA1B25 /* Memorize_Recap_App.swift */,
 				A3E1DE642AAC3DBF00B30F11 /* CardView.swift */,
 				A3E1DE6E2AAC6FB600B30F11 /* Cardify.swift */,
 				A3E1DE6C2AAC649100B30F11 /* Pie.swift */,
+				A3E1DE712AADB85C00B30F11 /* FlyingNumber.swift */,
 				A38FB6BB2AA6174F00CA1B25 /* EmojiMemoryGameView.swift */,
 				A362A0102AA7606B00779E07 /* MemorizeGame_Model.swift */,
 				A362A0122AA7615F00779E07 /* EmojiMemoryGame_ViewModel.swift */,
@@ -89,7 +91,6 @@
 				A38FB6C12AA61E9E00CA1B25 /* LectureNote */,
 				A38FB6AD2AA5EC7000CA1B25 /* Assets.xcassets */,
 				A38FB6AF2AA5EC7000CA1B25 /* Preview Content */,
-				A3E1DE712AADB85C00B30F11 /* FlyingNumber.swift */,
 			);
 			path = "Memorize(Recap)";
 			sourceTree = "<group>";
@@ -113,6 +114,7 @@
 				A3E1DE632AAC3D5A00B30F11 /* Lecture6.md */,
 				A3E1DE6B2AAC5D0000B30F11 /* Lecture7.md */,
 				A3E1DE702AACE11300B30F11 /* Lecture8.md */,
+				A3E1DE732AADC78000B30F11 /* Lecture9.md */,
 			);
 			path = LectureNote;
 			sourceTree = "<group>";

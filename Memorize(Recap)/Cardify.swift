@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct Cardify: ViewModifier, Animatable {
-    // Animatable 사용 이유 : 아래 base.opacity도 에니메이션화 되고 있음.
-    // Animatable을 구현하면 모든 작업이 자동으로 수행되지 않고 우리가 수행하기 때문.
     init(isFaceUp: Bool) {
         rotation = isFaceUp ? 0 : 180
     }

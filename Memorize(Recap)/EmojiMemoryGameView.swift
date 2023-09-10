@@ -13,31 +13,31 @@ struct EmojiMemoryGameView: View {
 
     private let aspectRatio: CGFloat = 2/3
     private let spacing: CGFloat = 4
+    private let dealtInterval: TimeInterval = 0.15
+    private let deckWidth: CGFloat  = 50
     
     var body: some View {
         VStack {
-            cards
-            // .animation(.default, value: viewModel.cards)
-            // Shuffling은 사용자 의도, viewModel 의도에 대한 응답이기 때문에 결코 그런 Shuffling을 수행하지 않습니다.
-            // .animation(.default, value: viewModel.cards)을 클릭하면 카드는 페이드인아웃 되었습니다.
-            // 이유는 이 에니메이션 효과는 Shuffling뿐만 아니라 모든 변경 사항에 적용되기 때문입니다.
+            cards.foregroundColor(viewModel.color)
             HStack {
                 score
+                Spacer()
+                deck.foregroundColor(viewModel.color)
                 Spacer()
                 shuffle
             }.font(.largeTitle )
         }
         .padding()
     }
+
     private var score: some View {
         Text("Score: \(viewModel.score)")
-            .animation(nil) // implicit animation 효과가 적용되어, score가 페이드인아웃 되는 버그 픽스
+            .animation(nil)
     }
 
     private var shuffle: some View {
         Button("Shuffle") {
             withAnimation(.easeOut(duration: 3 )) {
-                // withAnimation(.interactiveSpring(response: 1, dampingFraction:  0.5)) { // 재미있는 효과
                 viewModel.shuffle()
             }
         }
@@ -45,18 +45,76 @@ struct EmojiMemoryGameView: View {
 
     private var cards: some View {
         AspectVGrid(viewModel.cards, aspectRatio: aspectRatio) { card in
-            CardView(card)
-                .padding(spacing)
-                .overlay(FlyingNumber(number: scoreChange(causedBy: card)))
-                .onTapGesture {
-                    viewModel.choose(card)
-                }
+            if isDealt(card) {
+                CardView(card)
+                    .padding(spacing)
+                    .overlay(FlyingNumber(number: scoreChange(causedBy: card)))
+                    .zIndex(scoreChange(causedBy: card) != 0 ? 1 : 0)
+                    .onTapGesture {
+                        choose(card)
+                    }
+//                    .transition(.offset(
+//                        x: CGFloat.random(in: -1000...1000),
+//                        y: CGFloat.random(in: -1000...1000)
+//                    )) // 재밌는 이펙트
+                    .matchedGeometryEffect(id: card.id, in: dealingNameSpace)
+                    .transition(.asymmetric(insertion: .identity, removal: .identity))
+            }
         }
-        .foregroundColor(.orange)
+    }
+
+    @State private var dealt = Set<Card.ID>()
+
+    private func isDealt(_ card: Card) -> Bool {
+        dealt.contains(card.id)
+    }
+
+    private var undealtCards: [Card] {
+        viewModel.cards.filter { !isDealt($0) }
+    }
+
+    @Namespace private var dealingNameSpace
+
+    private var deck : some View {
+        ZStack {
+            ForEach(undealtCards) { card in
+                CardView(card)
+                    .matchedGeometryEffect(id: card.id, in: dealingNameSpace)
+                    .transition(.asymmetric(insertion: .identity, removal: .identity))
+            }
+        }
+        .frame(width: deckWidth, height: deckWidth / aspectRatio)
+        .onTapGesture {
+            // 컨테이너가 이미 화면에 나타난 후에 이 카드가 나타나도록 하는 것, 카드 컨테이너가 아직 화면에 표시되지 않은 경우 컨테이너와 함께 화면에 표시되므로 화면에 표시되는 에니메이션이 표시되지 않습니다.
+            // 카드 컨테이너는 LazyVGrid를 가지고 있는 AspectVRid입니다.
+            deal()
+        }
+    }
+
+    private func deal() { // deal the cards.
+        var delay: TimeInterval = 0
+        for card in viewModel.cards {
+            withAnimation(.easeInOut(duration: 2).delay(delay)) {
+                _ = dealt.insert(card.id)
+            }
+            delay += dealtInterval
+        }
+    }
+
+    @State private var lastScoreChange: (Int, causedByCardId: Card.ID) = (amount: 0, causedByCardId: "")
+
+    private func choose(_ card: Card) {
+        withAnimation() {
+            let scoreBeforeChoosing = viewModel.score
+            viewModel.choose(card)
+            let scoreChange = viewModel.score - scoreBeforeChoosing
+            lastScoreChange = (scoreChange, causedByCardId: card.id)
+        }
     }
 
     private func scoreChange(causedBy card: Card) -> Int {
-        return 0
+        let (amount, causedByCardId: id) = lastScoreChange // 튜플에서 값을 가져올 때 let이라 선언한 후 원하는 변수 이름을 선언합니다.
+        return card.id == id ? amount : 0
     }
 }
 
