@@ -28,6 +28,14 @@ class EmojiMemoryGame: ObservableObject {
         return model.cards
     }
 
+    var color: Color {
+        .orange
+    }
+
+    var score: Int {
+        model.score
+    }
+
     // MARK: - Intents
 
     func shuffle() {

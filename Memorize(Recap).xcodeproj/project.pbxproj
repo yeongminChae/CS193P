@@ -20,6 +20,7 @@
 		A3E1DE682AAC598700B30F11 /* AspectVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E1DE672AAC598700B30F11 /* AspectVGrid.swift */; };
 		A3E1DE6D2AAC649100B30F11 /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E1DE6C2AAC649100B30F11 /* Pie.swift */; };
 		A3E1DE6F2AAC6FB600B30F11 /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E1DE6E2AAC6FB600B30F11 /* Cardify.swift */; };
+		A3E1DE722AADB85C00B30F11 /* FlyingNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E1DE712AADB85C00B30F11 /* FlyingNumber.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,8 @@
 		A3E1DE6B2AAC5D0000B30F11 /* Lecture7.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Lecture7.md; sourceTree = "<group>"; };
 		A3E1DE6C2AAC649100B30F11 /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
 		A3E1DE6E2AAC6FB600B30F11 /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
+		A3E1DE702AACE11300B30F11 /* Lecture8.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Lecture8.md; sourceTree = "<group>"; };
+		A3E1DE712AADB85C00B30F11 /* FlyingNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyingNumber.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,7 @@
 				A38FB6C12AA61E9E00CA1B25 /* LectureNote */,
 				A38FB6AD2AA5EC7000CA1B25 /* Assets.xcassets */,
 				A38FB6AF2AA5EC7000CA1B25 /* Preview Content */,
+				A3E1DE712AADB85C00B30F11 /* FlyingNumber.swift */,
 			);
 			path = "Memorize(Recap)";
 			sourceTree = "<group>";
@@ -108,6 +112,7 @@
 				A3D43D552AA9F51000A4B44D /* Lecture5.md */,
 				A3E1DE632AAC3D5A00B30F11 /* Lecture6.md */,
 				A3E1DE6B2AAC5D0000B30F11 /* Lecture7.md */,
+				A3E1DE702AACE11300B30F11 /* Lecture8.md */,
 			);
 			path = LectureNote;
 			sourceTree = "<group>";
@@ -193,6 +198,7 @@
 				A362A0132AA7615F00779E07 /* EmojiMemoryGame_ViewModel.swift in Sources */,
 				A3E1DE652AAC3DBF00B30F11 /* CardView.swift in Sources */,
 				A38FB6BC2AA6174F00CA1B25 /* EmojiMemoryGameView.swift in Sources */,
+				A3E1DE722AADB85C00B30F11 /* FlyingNumber.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
