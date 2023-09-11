@@ -78,8 +78,8 @@
 		A38FB6A82AA5EC6F00CA1B25 /* Memorize(Recap) */ = {
 			isa = PBXGroup;
 			children = (
-				A3E1DE672AAC598700B30F11 /* AspectVGrid.swift */,
 				A38FB6A92AA5EC6F00CA1B25 /* Memorize_Recap_App.swift */,
+				A3E1DE672AAC598700B30F11 /* AspectVGrid.swift */,
 				A3E1DE642AAC3DBF00B30F11 /* CardView.swift */,
 				A3E1DE6E2AAC6FB600B30F11 /* Cardify.swift */,
 				A3E1DE6C2AAC649100B30F11 /* Pie.swift */,

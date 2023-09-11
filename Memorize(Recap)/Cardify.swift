@@ -19,14 +19,14 @@ struct Cardify: ViewModifier, Animatable {
     var rotation: Double
 
     var animatableData: Double {
-        get { return rotation }
+        get { rotation }
         set { rotation = newValue }
     }
 
     func body(content: Content) -> some View {
         ZStack {
             let base = RoundedRectangle(cornerRadius: Constants.cornerRadius)
-            base.strokeBorder(lineWidth:  Constants.lineWidth)
+            base.strokeBorder(lineWidth: Constants.lineWidth)
                 .background(base.fill(.white))
                 .overlay(content)
                 .opacity(isFaceUp ? 1 : 0)
@@ -44,6 +44,6 @@ struct Cardify: ViewModifier, Animatable {
 
 extension View {
     func cardify(isFaceUp: Bool) -> some View {
-        self.modifier(Cardify(isFaceUp: isFaceUp))
+        modifier(Cardify(isFaceUp: isFaceUp))
     }
 }

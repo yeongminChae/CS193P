@@ -22,31 +22,42 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
 
     var indexOfTheOneAndOnlyFaceUpCard: Int? {
         get { cards.indices.filter { index in cards[index].isFaceUp}.only }
-        set { cards.indices.forEach { cards[$0].isFaceUp = (newValue == $0) }
-        }
+        set { cards.indices.forEach { cards[$0].isFaceUp = (newValue == $0) }}
     }
 
     mutating func choose(_ card: Card) {
-        if let chosenIndex = cards.firstIndex(where: { $0.id == card.id}) {
-            if !cards[chosenIndex].isFaceUp && !cards[chosenIndex].isMatched {
-                if let potentialMatchIndex = indexOfTheOneAndOnlyFaceUpCard {
-                    if cards[chosenIndex].content == cards[potentialMatchIndex].content {
-                        cards[chosenIndex].isFaceUp = true
-                        cards[potentialMatchIndex].isMatched = true
-                        score += 2 + cards[chosenIndex].bonus + cards[potentialMatchIndex].bonus
-                    } else {
-                        if cards[chosenIndex].hasBeenSeen {
-                            score -= 1
-                        }
-                        if cards[potentialMatchIndex].hasBeenSeen {
-                            score -= 1
-                        }
-                    }
-                }
+        guard let chosenIndex = cards.firstIndex(where: { $0.id == card.id }),
+              !cards[chosenIndex].isFaceUp,
+              !cards[chosenIndex].isMatched else {
+            return
+        }
+
+        if let potentialMatchIndex = indexOfTheOneAndOnlyFaceUpCard {
+            if cards[chosenIndex].content == cards[potentialMatchIndex].content {
+                handleMatch(chosenIndex, potentialMatchIndex)
             } else {
-                indexOfTheOneAndOnlyFaceUpCard = chosenIndex
+                handleMismatch(chosenIndex, potentialMatchIndex)
             }
-            cards[chosenIndex].isFaceUp = true
+        } else {
+            indexOfTheOneAndOnlyFaceUpCard = chosenIndex
+        }
+
+        cards[chosenIndex].isFaceUp = true
+        cards[chosenIndex].hasBeenSeen = true
+    }
+
+    private mutating func handleMatch(_ chosenIndex: Int, _ potentialMatchIndex: Int) {
+        cards[chosenIndex].isMatched = true
+        cards[potentialMatchIndex].isMatched = true
+        score += 2 + cards[chosenIndex].bonus + cards[potentialMatchIndex].bonus
+    }
+
+    private mutating func handleMismatch(_ chosenIndex: Int, _ potentialMatchIndex: Int) {
+        if cards[chosenIndex].hasBeenSeen {
+            score -= 1
+        }
+        if cards[potentialMatchIndex].hasBeenSeen {
+            score -= 1
         }
     }
 
@@ -83,14 +94,14 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
 
         // MARK: - Bonus Time
 
-        // call this when the card transition to face up state.
+        // call this when the card transitions to face up state
         private mutating func startUsingBonusTime() {
             if isFaceUp && !isMatched && bonusPercentRemaining > 0, lastFaceUpDate == nil {
                 lastFaceUpDate = Date()
             }
         }
 
-        // Call this when the card goes back face down or gets matched
+        // call this when the card goes back face down or gets matched
         private mutating func stopUsingBonusTime() {
             pastFaceUpTime = faceUpTime
             lastFaceUpDate = nil
@@ -117,20 +128,21 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
             }
         }
 
-        // can be zero which would mean "no bonus avaliable" for matching this card quickly
+        // can be zero which would mean "no bonus available" for matching this card quickly
         var bonusTimeLimit: TimeInterval = 6
 
         // the last time this card was turned face up
         var lastFaceUpDate: Date?
 
         // the accumulated time this card was face up in the past
-        // (i.e not including the current time it's been face up if it is currently so)
+        // (i.e. not including the current time it's been face up if it is currently so)
         var pastFaceUpTime: TimeInterval = 0
+
     }
 }
 
 extension Array {
     var only: Element? {
-        return count == 1 ? first : nil
+        count == 1 ? first : nil
     }
 }

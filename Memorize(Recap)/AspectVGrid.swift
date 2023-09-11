@@ -34,7 +34,7 @@ struct AspectVGrid<Item: Identifiable, ItemView: View>: View {
         }
     }
 
-    func gridItemWidthThatFits (
+    private func gridItemWidthThatFits (
         count: Int,
         size: CGSize,
         atAspectRatio aspectRatio: CGFloat
